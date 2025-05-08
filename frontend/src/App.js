@@ -33,7 +33,7 @@ function App() {
     const detectedLang = detectLang(word);
     setLang(detectedLang);
     try {
-      const response = await fetch(`http://localhost:3000/ask?word=${encodeURIComponent(word)}&lang=${detectedLang}`);
+      const response = await fetch(`https://langassist-backend.onrender.com/ask?word=${encodeURIComponent(word)}&lang=${detectedLang}`);
       if (!response.ok) throw new Error('Erro ao buscar resultados');
       const data = await response.json();
       setResult(data);
